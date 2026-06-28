@@ -1,13 +1,17 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int n = nums.length;
-    int expectedSum = n * (n + 1) / 2;
-
-    int actualSum = 0;
-    for (int num : nums) {
-        actualSum += num;
-    }
-
-    return expectedSum - actualSum;
+        int sum = 0;
+        // 1. Added 'int' to declare i
+        for (int i = 0; i < nums.length; i++) {
+            sum = sum + nums[i];
+        }
+        
+        // 2. Added '=' operator
+        int actualSum = (nums.length * (nums.length + 1)) / 2;
+        
+        int missingnum = actualSum - sum;
+        
+        // 3. Added missing semicolon
+        return missingnum; 
     }
 }
